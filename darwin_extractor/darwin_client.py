@@ -17,15 +17,13 @@ class DarwinClient:
     API_VERSION = '2.1'
 
     def __init__(self, token: str) -> None:
-        self.__product_score_url = "darwininfo/{api_version}/products/{product_name}/scores"  # ravelin_client_config.url_without_score()
+        self.__product_score_url = "darwininfo/{api_version}/products/{product_name}/scores"
         self.__token = token
         self.__headers = {"Authorization": f"Bearer {self.__token}"}
 
     @staticmethod
     def __check_response(response: Response) -> None:
         if not response.ok:
-            breakpoint()
-
             raise RequestException("Darwin request failed", response=response)
 
     def __get(self, url: str) -> Response:

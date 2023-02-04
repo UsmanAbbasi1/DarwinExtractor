@@ -2,7 +2,16 @@ from pydantic.fields import Field
 from pydantic import BaseModel
 
 
-class DarwinPurchaseResponse(BaseModel):
+class DarwinBaseModel(BaseModel):
+    """
+    We can move other common fields here when using multiple APIs from Darwin
+    """
+
+    class Config:
+        allow_population_by_field_name = True
+
+
+class DarwinPurchaseResponse(DarwinBaseModel):
     product_name: str = Field(None, alias="productName")
     dc: str = Field(None)
     os: str = Field(None)

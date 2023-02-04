@@ -11,11 +11,22 @@ To run the extractor API, replace your access_token [here](https://github.com/Us
 2: Activate virtual env
 > source darwin_env/bin/activate
 
+3: Set proper python path.
+> Change directory from terminal to root darwin_extractor (which is Github repository's root folder)
+
+> cd darwin_extractor
+
+> export PYTHONPATH=.
+
 3: Install requirements/dependencies
 > pip install -r requirements.txt
  
 4: Run the darwin extractor script: 
 > python darwin_extractor/main.py 
+
+5: Run test case
+>  python -m unittest discover tests/
+
 
 
 ## Choice of DataStructure

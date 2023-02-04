@@ -3,8 +3,8 @@ import logging
 import requests
 from requests import RequestException, Response
 
-from exceptions import DarwinException
-from models import DarwinPurchaseResponse
+from darwin_extractor.exceptions import DarwinException
+from darwin_extractor.models import DarwinPurchaseResponse
 
 logger = logging.Logger(__name__)
 

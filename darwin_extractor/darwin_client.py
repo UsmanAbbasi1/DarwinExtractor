@@ -28,7 +28,7 @@ class DarwinClient:
             response: Response = requests.get(url, headers=self.__headers)
             self.__check_response(response)
         except RequestException as e:
-            raise DarwinException from e
+            raise DarwinException(error_message=e.response.json().get('fault', {}).get('message'))
 
         return response
 
@@ -42,7 +42,7 @@ class DarwinClient:
             response: Response = self.__get(url)
         except DarwinException as e:
             # TODO: Can send to Sentry or other monitoring tool based on business requirements
-            logger.error(f"Failed to get darwin product info: {e}")
+            logger.error(f"Failed to get darwin product info: {e.error_message}")
             return
 
         darwin_response = DarwinPurchaseResponse(**response.json())

@@ -21,10 +21,16 @@ To run the extractor API, replace your access_token [here](https://github.com/Us
 3: Install requirements/dependencies
 > pip install -r requirements.txt
  
-4: Run the darwin extractor script: 
+4:Create .env file to load environment variables i.e. ACCESS_TOKEN
+Duplicate file called [.env.example](https://github.com/UsmanAbbasi1/DarwinExtractor/blob/main/.env.example) and rename it to .env
+Assign your Darwin access token value to variable ACCESS_TOKEN in .env file.
+
+Notice that without this, your code will return authentication error.
+
+5: Run the darwin extractor script: 
 > python darwin_extractor/main.py 
 
-5: Run test case
+6: Run test case
 >  python -m unittest discover tests/
 
 

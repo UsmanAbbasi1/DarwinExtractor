@@ -3,13 +3,10 @@ import logging
 import requests
 from requests import RequestException, Response
 
+from exceptions import DarwinException
 from models import DarwinPurchaseResponse
 
 logger = logging.Logger(__name__)
-
-
-class DarwinException(BaseException):
-    pass
 
 
 class DarwinClient:
@@ -44,7 +41,7 @@ class DarwinClient:
         try:
             response: Response = self.__get(url)
         except DarwinException as e:
-            # TODO: Can send to Sentry or other montiring tool based on business requirements
+            # TODO: Can send to Sentry or other monitoring tool based on business requirements
             logger.error(f"Failed to get darwin product info: {e}")
             return
 

@@ -1,0 +1,2 @@
+class DarwinException(BaseException):
+    pass

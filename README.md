@@ -12,8 +12,8 @@ To run the extractor API, replace your access_token [here](https://github.com/Us
 > source darwin_env/bin/activate
 
 3: Set proper python path.
-> Change directory from terminal to root darwin_extractor (which is Github repository's root folder)
 
+Change directory from terminal to root darwin_extractor (which is Github repository's root folder)
 > cd darwin_extractor
 
 > export PYTHONPATH=.
@@ -21,8 +21,10 @@ To run the extractor API, replace your access_token [here](https://github.com/Us
 3: Install requirements/dependencies
 > pip install -r requirements.txt
  
-4:Create .env file to load environment variables i.e. ACCESS_TOKEN
-Duplicate file called [.env.example](https://github.com/UsmanAbbasi1/DarwinExtractor/blob/main/.env.example) and rename it to .env
+4: Create .env file to load environment variables i.e. ACCESS_TOKEN
+
+Duplicate the file called [.env.example](https://github.com/UsmanAbbasi1/DarwinExtractor/blob/main/.env.example) and rename it to .env
+
 Assign your Darwin access token value to variable ACCESS_TOKEN in .env file.
 
 Notice that without this, your code will return authentication error.
@@ -45,10 +47,10 @@ response format. Instead it is using out intermediary data structure called [Dar
 I have kept in mind the separation of concern. Models, Client class, extraction and formatting of data, everything is 
 very cleanly separated in separate files/classes. This makes the code extendable, maintainable and scalable.
 
-I also have written a test case to test the code. Though, on production level code, I would have more test coverage than 
-I have in this task.
 
 Example of output data:
 response from darwin 'DAH': product_name='DAH.5.24' dc='5.18' os='4.82' cs='1.57' mc='9.89' rplus='1.31' ra='9.87' ex='10.0' pf='0.87' score='48.51' rminus='3.21' rs='7.16' sc='4.54' la='7.85' cp='4.54'
 
-
+## Testing
+I also have written a test case to test the code. Though, on production level code, I would have more test coverage than 
+I have in this task.

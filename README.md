@@ -47,6 +47,9 @@ response format. Instead it is using out intermediary data structure called [Dar
 I have kept in mind the separation of concern. Models, Client class, extraction and formatting of data, everything is 
 very cleanly separated in separate files/classes. This makes the code extendable, maintainable and scalable.
 
+Please note that many of the things are kept limited here, even structure wise.
+In Production code and where we have enough time, things will be more divided into modules where needed keeping
+in mind the extendability and future scalability of the code
 
 Example of output data:
 response from darwin 'DAH': product_name='DAH.5.24' dc='5.18' os='4.82' cs='1.57' mc='9.89' rplus='1.31' ra='9.87' ex='10.0' pf='0.87' score='48.51' rminus='3.21' rs='7.16' sc='4.54' la='7.85' cp='4.54'
